@@ -8,7 +8,7 @@
 #<src>                                                <mnt_point>  <type>  <mnt_flags and options>                     <fs_mgr_flags>
 /dev/block/bootdevice/by-name/system         /system      ext4    ro,barrier=1                                        wait
 /dev/block/bootdevice/by-name/userdata       /data        ext4    nosuid,nodev,barrier=1,noauto_da_alloc,discard      wait,check,encryptable=footer
-/dev/block/zram0             none         swap    defaults zramsize=536870912
+/dev/block/zram0             none         swap    defaults zramsize=268435456
 /devices/soc.0/7864900.sdhci/mmc_host*        /storage/sdcard1   vfat    nosuid,nodev         wait,voldmanaged=sdcard1:auto,noemulatedsd,encryptable=footer
 /dev/block/bootdevice/by-name/config         /frp  emmc  defaults defaults
 # Added by baijianhua to make otg enable (A6500) HQ01774721 20160303 begin
