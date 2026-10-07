@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carrier=wifi-only
+    ro.carrier=wifi-only \
     audio.offload.disable=1
 
 # Dalvik properties
