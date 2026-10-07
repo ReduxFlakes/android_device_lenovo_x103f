@@ -20,6 +20,8 @@ DEVICE_PROVISIONED=1
 debug.sf.hw=1
 debug.egl.hw=1
 debug.composition.type=dyn
+# Portrait panel (otm1287a 800x1280) in a landscape tablet: rotate SF output
+ro.sf.hwrotation=90
 #modify by xingbin for display flicker
 debug.hwc.dynThreshold=2.0
 debug.mdpcomp.logs=0
