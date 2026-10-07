@@ -21,7 +21,17 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carrier=wifi-only
     audio.offload.disable=1
+
+# Dalvik properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=256m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=8m
 
 #Camera
 PRODUCT_PACKAGES += \
@@ -32,6 +42,9 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libmmjpeg_interface \
     mm-qcamera-app
+
+PRODUCT_PACKAGES += \
+    Snap
 
 #Display
 PRODUCT_PACKAGES += \
@@ -56,6 +69,10 @@ PRODUCT_PACKAGES += \
     init.qcom.zram.sh \
     init.qti.ims.sh \
     init.qti.synaptics_dsx_qhd.sh
+
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -342,5 +359,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         setproperties
 #Add by wangtianyu for country list 20160425 SW00183743 end
+
+PRODUCT_CHARACTERISTICS := tablet 
 
 $(call inherit-product-if-exists, vendor/lenovo/x103f/x103f-vendor.mk)
