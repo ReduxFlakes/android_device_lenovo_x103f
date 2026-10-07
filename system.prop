@@ -197,3 +197,6 @@ ro.carrier=wifi-only
 
 # NO ril device
 ro.radio.noril=1
+
+#SD Card I/O
+ro.sys.sdcardfs=true
