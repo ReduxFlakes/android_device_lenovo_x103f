@@ -21,19 +21,10 @@ DEVICE_PATH := device/lenovo/x103f
 ifeq ($(TARGET_ARCH),)
 TARGET_ARCH := arm
 endif
-#add by wangtianyu for odex SW00187384 20150425 begin
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    ifeq ($(TARGET_BUILD_VARIANT),user)
-               WITH_DEXPREOPT := true
-               DEX_PREOPT_DEFAULT := true
-               WITH_DEXPREOPT_PIC := true
-    endif
-  endif
-endif
-#add by wangtianyu for odex SW00187384 20150425 end
 
-BLOCK_BASED_OTA := false
+WITH_DEXPREOPT := false
+
+BLOCK_BASED_OTA := true
 TARGET_OTA_ASSERT_DEVICE := msm8909,x103f
 
 TARGET_COMPILE_WITH_MSM_KERNEL := true
