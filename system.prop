@@ -20,6 +20,11 @@ DEVICE_PROVISIONED=1
 debug.sf.hw=1
 debug.egl.hw=1
 debug.composition.type=dyn
+# Portrait panel (otm1287a 800x1280) in a landscape tablet: rotate SF output.
+# Makes the logical display landscape-natural (rotation 0 = landscape).
+# NOTE: verify rotation settings are clean (user_rotation=0,
+# accelerometer_rotation=1) before judging orientation behavior.
+ro.sf.hwrotation=90
 #modify by xingbin for display flicker
 debug.hwc.dynThreshold=2.0
 debug.mdpcomp.logs=0
