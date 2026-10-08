@@ -364,4 +364,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_CHARACTERISTICS := tablet 
 
+# Unofficial build with no update server: drop the OTA updater app.
+# (vendor/cm adds CMUpdater to PRODUCT_PACKAGES unconditionally;
+# filter-out here runs after all inherits, so it wins.)
+PRODUCT_PACKAGES := $(filter-out CMUpdater,$(PRODUCT_PACKAGES))
+
 $(call inherit-product-if-exists, vendor/lenovo/x103f/x103f-vendor.mk)
