@@ -365,8 +365,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_CHARACTERISTICS := tablet 
 
 # Unofficial build with no update server: drop the OTA updater app.
-# (vendor/cm adds CMUpdater to PRODUCT_PACKAGES unconditionally;
-# filter-out here runs after all inherits, so it wins.)
-PRODUCT_PACKAGES := $(filter-out CMUpdater,$(PRODUCT_PACKAGES))
+# Keep Snap as the only camera app (vanilla Camera2 comes from AOSP
+# generic_no_telephony and crashes more on this device).
+# Drop the Contacts app on this wifi-only tablet (ContactsProvider stays
+# for the framework; core.mk pulls the app unconditionally).
+# (All three are added to PRODUCT_PACKAGES by base configs; this filter-out
+# runs after all inherits, so it wins.)
+PRODUCT_PACKAGES := $(filter-out CMUpdater Camera2 Contacts,$(PRODUCT_PACKAGES))
 
 $(call inherit-product-if-exists, vendor/lenovo/x103f/x103f-vendor.mk)

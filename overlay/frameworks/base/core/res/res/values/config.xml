@@ -57,6 +57,42 @@
        <item><xliff:g id="id">secure</xliff:g></item>
        <item><xliff:g id="id">clock</xliff:g></item>
     </string-array>
+
+    <!-- Wifi-only tablet: no mobile networks. This drives
+         ConnectivityManager (isWifiOnly) and hides the mobile-data,
+         SIM and "About phone" telephony UI. -->
+    <string-array name="networkAttributes">
+        <item>wifi,1,1,1,-1,true</item>
+        <item>wifi_p2p,13,1,0,-1,true</item>
+    </string-array>
+
+    <string-array translatable="false" name="radioAttributes">
+       <item>"1,1"</item>
+       <item>"0,1"</item>
+       <item>"7,1"</item>
+    </string-array>
+
+    <string-array translatable="false" name="config_tether_usb_regexs">
+        <item>"usb\\d"</item>
+        <item>"rndis\\d"</item>
+    </string-array>
+
+    <string-array translatable="false" name="config_tether_wifi_regexs">
+        <item>"wlan\\d"</item>
+    </string-array>
+
+    <string-array translatable="false" name="config_tether_bluetooth_regexs">
+        <item>"bnep\\d"</item>
+        <item>"bt-pan"</item>
+    </string-array>
+
+    <integer-array translatable="false" name="config_tether_upstream_types">
+        <item>0</item>
+        <item>1</item>
+        <item>4</item>
+        <item>5</item>
+        <item>7</item>
+    </integer-array>
    <!-- Config determines whether to update phone object when voice registration
    state changes. Voice radio tech change will always trigger an update of
    phone object irrespective of this config -->
