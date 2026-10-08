@@ -109,7 +109,8 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
     libOmxVdec \
-    libOmxVenc
+    libOmxVenc \
+    libstagefright_soft_flacdec
 
 PRODUCT_BOOT_JARS += \
     libstagefrighthw
@@ -364,13 +365,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_CHARACTERISTICS := tablet 
 
-# Unofficial build with no update server: drop the OTA updater app.
-# Keep Snap as the only camera app (vanilla Camera2 comes from AOSP
-# generic_no_telephony and crashes more on this device).
-# Drop the Contacts app on this wifi-only tablet (ContactsProvider stays
-# for the framework; core.mk pulls the app unconditionally).
-# (All three are added to PRODUCT_PACKAGES by base configs; this filter-out
-# runs after all inherits, so it wins.)
-PRODUCT_PACKAGES := $(filter-out CMUpdater Camera2 Contacts,$(PRODUCT_PACKAGES))
+# NOTE: unwanted inherited packages (CMUpdater, Camera2, Contacts) are
+# filtered in Android.mk, NOT here: M's lazy product inheritance expands
+# base packages after product files are parsed, so a filter-out here runs
+# against unexpanded tags and removes nothing.
 
 $(call inherit-product-if-exists, vendor/lenovo/x103f/x103f-vendor.mk)

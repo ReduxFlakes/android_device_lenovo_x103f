@@ -42,4 +42,12 @@ $(WLAN_MODULE_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_CFG_INI) $(PERSIST_DICT) $(PERSIST_MAC) $(WLAN_MODULE_SYMLINK)
 
+# Drop unwanted inherited packages (OTA updater on an unofficial build
+# with no update server; vanilla Camera2 in favour of Snap; Contacts app
+# on a wifi-only tablet while keeping ContactsProvider).
+# This MUST live here (module phase, post product-inheritance resolution):
+# the same filter-out in a product .mk runs before M's lazy inheritance
+# expands base packages, so it silently removes nothing.
+PRODUCT_PACKAGES := $(filter-out CMUpdater Camera2 Contacts,$(PRODUCT_PACKAGES))
+
 endif
