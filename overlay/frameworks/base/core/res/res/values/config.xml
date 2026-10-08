@@ -108,6 +108,10 @@
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
 
+    <!-- Wifi-only tablet: no voice capability. Removes phone affordances
+         (emergency dialer on lockscreen, mobile signal cluster, SIM UI). -->
+    <bool name="config_voice_capable">false</bool>
+
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
          on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
