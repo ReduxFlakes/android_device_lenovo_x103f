@@ -16,7 +16,7 @@
 # Boot animation
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 1280
-TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_BOOTANIMATION_HALF_RES := false
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
