@@ -19,7 +19,7 @@ TARGET_SCREEN_WIDTH := 800
 TARGET_BOOTANIMATION_HALF_RES := true
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/lenovo/x103f/full_x103f.mk)
