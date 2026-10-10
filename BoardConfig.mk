@@ -122,7 +122,6 @@ TARGET_NO_RPC := true
 PROTOBUF_SUPPORTED := false
 
 # Init
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Enable peripheral manager
